@@ -60,7 +60,7 @@ const int NUM_SCALAR_INPUTS = 5;
 const vector<string> SCALAR_INPUT_KEYS = { "range_rad", "steering_rad",  "throttle", "brake", "timestamp" };
 vector<double> currentScalarInputs;
 const int NUM_BUTTON_INPUTS = 16;
-const vector<string> BUTTON_INPUT_KEYS = { "circle", "triangle", "square", "cross", "R2", "R3", "L2", "L3", "plus", "minus", "share", "options", "playstation", "return", "paddle_right", "paddle_left"};
+const vector<string> BUTTON_INPUT_KEYS = { "circle", "triangle", "square", "cross", "R2", "R3", "L2", "L3", "plus", "minus", "share", "options", "playstation", "return", "paddle_right", "paddle_left" };
 const vector<int> BUTTON_INPUT_INDEXES = { 2,3,1,0,6,10,7,11,19,20,8,9,24,23,4,5 };
 vector<int> currentButtonInputs;
 mutex currentG29InputJSONMutex;
@@ -137,7 +137,7 @@ void InitG29State() {
 
 void UpdateCurrentG29InputJSON() {
 	string x = "{";
-	
+
 	x += "\"scalars\":{";
 	for (int i = 0; i < NUM_SCALAR_INPUTS; i++) {
 		x += "\"" + SCALAR_INPUT_KEYS[i] + "\":" + to_string(currentScalarInputs[i]);
@@ -234,7 +234,7 @@ void RunWindowLoop() {
 
 void RunUpdateG29StateLoop() {
 	InitG29State();
-	
+
 	int i = 0;
 	while (true) {
 		i++;
